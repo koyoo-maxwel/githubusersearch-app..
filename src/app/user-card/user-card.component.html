@@ -1,0 +1,33 @@
+<div class="card">
+  <img class="card-img-top" src="{{user.avatar_url}}" alt="{{user.name}}">
+  <div class="card-body">
+    <h4 class="card-title">
+      <a href="{{user.html_url}}">{{user.name}}</a>
+      <small>{{user.login}}</small>
+    </h4>
+    <p class="card-text">{{user.bio}}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <i class="fa fa-map-marker text-mutted" aria-hidden="true"></i>
+      <small>
+        {{user.location}}
+      </small>
+    </li>
+    <li class="list-group-item">
+      <a href="mailto:{{user.email}}">
+        <i class="fa fa-envelope text-mutted" aria-hidden="true"></i>
+        <small>{{user.email}}</small>
+      </a>
+    </li>
+    <li class="list-group-item">
+      <a href="{{user.blog}}">
+        <i class="fa fa-globe text-mutted" aria-hidden="true"></i>
+        <small>{{user.blog}}</small>
+      </a>
+    </li>
+  </ul>
+  <div class="card-footer">
+    <small class="text-muted">{{user.created_at | date : 'fullDate'}}</small>
+  </div>
+</div>

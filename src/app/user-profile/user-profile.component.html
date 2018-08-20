@@ -1,0 +1,27 @@
+
+<app-koyoo></app-koyoo>
+
+<app-github-search (onSearchUser)="searchUser($event)"></app-github-search>
+<div *ngIf="user">
+  <!-- user-card-info -->
+  <div class="row">
+    <div class="col-md-5 col-lg-4">
+      <app-user-card [user]="user"></app-user-card>
+    </div>
+
+    <div class="col-md-7 col-lg-8">
+      <div class="row">
+        <div class="col-md-12">
+          <span class="badge badge-primary">{{user.public_repos}} Public repos</span>
+          <span class="badge badge-success">{{user.public_gists}} Public Gists</span>
+          <span class="badge badge-info">{{user.followers}} Follewers</span>
+          <span class="badge badge-warning">{{user.following}} Following</span>
+        </div>
+
+        <div class="col-md-12" style="padding-top:30px;">
+          <app-repo-card *ngFor="let repo of repos" [repo]="repo"></app-repo-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
